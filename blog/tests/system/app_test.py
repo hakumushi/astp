@@ -1,6 +1,7 @@
 from unittest import TestCase
 from unittest.mock import patch
 from blog import Blog
+from post import Post
 import app
 
 
@@ -33,3 +34,38 @@ class AppTest(TestCase):
 
             self.assertIsNotNone(app.blogs.get('Test'))
 
+
+    def test_ask_read_blog(self):
+        blog = Blog('Test', 'Test Author')
+        app.blogs = {'Test': blog}
+        with patch('builtins.input', return_value='Test'):
+            with patch('app.print_posts') as mocked_print_posts:
+                app.ask_read_blog()
+
+                mocked_print_posts.assert_called_with(blog)
+
+
+    def test_print_posts(self):
+        blog = Blog('Test', 'Test Author')
+        blog.create_post('Test Post', 'Test Content')
+        app.blogs = {'Test': blog}
+
+        with patch('app.print_post') as mocked_print_posts:
+            app.print_posts(blog)
+
+            mocked_print_posts.assert_called_with(blog.posts[0])
+
+
+    def test_print_post(self):
+        post = Post('Post title', 'Post content')
+        expected_print = '''
+--- Post title ---
+
+Post content
+
+
+'''
+        with patch('builtins.print') as mocked_print:
+            app.print_post(post)
+
+            mocked_print.assert_called_with(expected_print)

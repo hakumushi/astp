@@ -2,3 +2,4 @@
 venv
 blog/.DS_Store
 blog/.idea
+blog/__pycache__
