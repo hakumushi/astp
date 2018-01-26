@@ -1,5 +1,5 @@
 .DS_Store
 venv
-blog/.DS_Store
-blog/.idea
-blog/__pycache__
+section3/blog/.DS_Store
+section3/blog/.idea
+section3/blog/__pycache__
