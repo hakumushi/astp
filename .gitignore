@@ -1,5 +1,7 @@
 .DS_Store
-venv
+section3/venv
 section3/blog/.DS_Store
 section3/blog/.idea
 section3/blog/__pycache__
+section4/venv
+section4/app/.idea
