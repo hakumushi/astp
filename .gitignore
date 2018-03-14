@@ -11,3 +11,7 @@ section6/venv
 section6/starter_code/.idea
 section7/venv
 section7/starter_code/.idea
+section7/starter_code/__pycache__
+section7/starter_code/models/__pycache__
+section7/starter_code/resources/__pycache__
+section7/starter_code/data.db
