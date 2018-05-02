@@ -17,3 +17,7 @@ section7/starter_code/resources/__pycache__
 section7/starter_code/data.db
 section10/venv
 section10/.idea
+section10/tests/__pycache__
+section10/tests/acceptance/__pycache__
+section10/tests/acceptance/page_model/__pycache__
+section10/tests/acceptance/locators/__pycache__
